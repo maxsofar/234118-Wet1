@@ -18,7 +18,7 @@ loop_HW1:
     jz end_program_HW1  # If it is, we've reached the end of the list
 
     cmpq %rbx, (%rax)   # Compare the data of the current node with the previous node
-    jle check_equal_HW1 # If the current node's data is less than or equal to the previous node's data, check if it's equal
+    jbe check_equal_HW1 # If the current node's data is less than or equal to the previous node's data, check if it's equal
 
     movq (%rax), %rbx   # Load the data of the current node
     addq $8, %rax       # Move to the 'next' field of the current node
